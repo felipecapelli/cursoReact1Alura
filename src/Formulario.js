@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-class Formulario extends Component{
+class Formulario extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.stateInicial = {
@@ -18,7 +18,7 @@ class Formulario extends Component{
         const { name, value } = event.target;
 
         this.setState({
-            [name] : value
+            [name]: value
         })
     }
 
@@ -27,39 +27,46 @@ class Formulario extends Component{
         this.setState(this.stateInicial);
     }
 
-    render(){
+    render() {
 
-        const {nome, livro, preco} = this.state;
+        const { nome, livro, preco } = this.state;
 
-        return(
+        return (
             <form>
-                <label htmlFor="nome">Nome</label>
-                <input
-                    id="nome"
-                    type="text"
-                    name="nome"
-                    value={nome}
-                    onChange = { this.escutadorDeImput }/>
-            
-                <label htmlFor="livro">Livro</label>
-                <input
-                    id="livro"
-                    type="text"
-                    name="livro"
-                    value={livro}
-                    onChange = { this.escutadorDeImput }/>
-            
-            
-                <label htmlFor="preco">Preço</label>
-                <input
-                    id="preco"
-                    type="text"
-                    name="preco"
-                    value={preco}
-                    onChange = { this.escutadorDeImput }/>
-            
-            
-                <button type="button" onClick={this.submitFormulario}>Salvar
+                <div className="row">
+                    <div className="input-field col s4">
+                        <label className="input-field" htmlFor="nome">Nome</label>
+                        <input
+                            className="validate"
+                            id="nome"
+                            type="text"
+                            name="nome"
+                            value={nome}
+                            onChange={this.escutadorDeImput} />
+                    </div>
+                    <div className="input-field col s4">
+                        <label className="input-field" htmlFor="livro">Livro</label>
+                        <input
+                            className="validate"
+                            id="livro"
+                            type="text"
+                            name="livro"
+                            value={livro}
+                            onChange={this.escutadorDeImput} />
+                    </div>
+                    <div className="input-field col s4">
+                        <label className="input-field" htmlFor="preco">Preço</label>
+                        <input
+                            className="validate"
+                            id="preco"
+                            type="text"
+                            name="preco"
+                            value={preco}
+                            onChange={this.escutadorDeImput} />
+                    </div>
+
+                </div>
+                <button className="waves-effect waves-light indigo lighten-2 btn" type="button" onClick={this.submitFormulario}>Salvar
                 </button>
             </form>
         );
