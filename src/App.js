@@ -1,39 +1,55 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Tabela from './Tabela'
 
-const  autores =  [
-  {
-    nome: 'Paulo',
-    livro: 'React',
-    preco: '1000'
-  },
-  {
-    nome: 'Daniel',
-    livro: 'Java',
-    preco: '99'
-  },
-  {
-    nome: 'Marcos',
-    livro: 'Design',
-    preco: '150'
-  },
-  {
-    nome: 'Bruno',
-    livro: 'DevOps',
-    preco: '100'
-  }
-];
+class App extends Component {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-          <Tabela autores={ autores }/>
-      </header>
-    </div>
-  );
+  state = {
+    autores: [
+      {
+        nome: 'Paulo',
+        livro: 'React',
+        preco: '1000'
+      },
+      {
+        nome: 'Daniel',
+        livro: 'Java',
+        preco: '99'
+      },
+      {
+        nome: 'Marcos',
+        livro: 'Design',
+        preco: '150'
+      },
+      {
+        nome: 'Bruno',
+        livro: 'DevOps',
+        preco: '100'
+      }
+    ]
+  };
+
+  removeAutor = index => {
+
+    const { autores } = this.state;
+
+    this.setState(
+      {
+        autores: autores.filter((autor, posAtual) => {
+          return posAtual !== index;
+        })
+      }
+    );
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Tabela autores={this.state.autores} removeAutor={this.removeAutor} />
+      </div>
+    );
+  }
 }
 
 export default App;
