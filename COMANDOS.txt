@@ -1,0 +1,5 @@
+Para criar o projeto:
+npm install create-react-app
+npx create-react-app curso-react-alura
+cd curso-react-alura        (entrar na pasta do curso que acabou de ser criada)
+npm startnpx
