@@ -3,3 +3,7 @@ npm install create-react-app
 npx create-react-app curso-react-alura
 cd curso-react-alura        (entrar na pasta do curso que acabou de ser criada)
 npm startnpx
+
+//---------------------------------------------
+Para instalar o Materialize:
+npm install materialize-css@1.0.0
